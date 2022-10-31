@@ -1,12 +1,3 @@
-require 'rspec'
-
-=begin
-  create a method called change in a class called ChangeMachine that will take number of cents and return an array of
-  coins that will be your change. The goal is to return as few coins as possible. Assume that the highest denomination
-  of coins will be a quarter (25 cents). For example: if the method receives 119, the result will be [25, 25, 25, 25, 10, 5, 1, 1, 1, 1]
-=end
-
-
 class ChangeMachine
   def change(cents)
     coin_types = [25, 10, 5, 1]
@@ -21,8 +12,8 @@ class ChangeMachine
   end 
 end 
 
-
-Rspec.describe ChangeMachine do 
+#make sure to capitilize the 'S' in RSpec
+RSpec.describe ChangeMachine do 
   describe '#change' do 
     it 'should return [1] when given 1' do
       machine = ChangeMachine.new
@@ -56,10 +47,5 @@ Rspec.describe ChangeMachine do
       machine = ChangeMachine.new
       expect(machine.change(25)).to eq([25])
     end
-
-
-
-
-
   end
 end 
