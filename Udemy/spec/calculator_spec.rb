@@ -15,6 +15,10 @@ class Calculator
     return dividend / divisor
   end
 
+  def square(number)
+    number * number
+  end
+
   def power(number, exponent)
     return number ** exponent
   end
@@ -28,6 +32,18 @@ RSpec.describe Calculator do
       calculator = Calculator.new
       result = calculator.add(1,3)
       expect(result).to eq(4)
+    end
+    it 'should work for negative numbers' do
+      calculator = Calculator.new
+      result = calculator.add(1,-3)
+      expect(result).to eq(-2)
+    end
+  end
+  describe '#square' do 
+    it 'should return a number times itself' do
+    calculator = Calculator.new
+    result = calculator.square(2)
+    expect(result).to eq(4)
     end
   end
 end
