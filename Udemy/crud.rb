@@ -9,7 +9,7 @@
 module Crud
   require 'bcrypt'
   puts "Module CRUD activated"
-  def Crud.create_hash_digest(password)
+  def Crud.create_hash_digest(password) #class reference infront of all method names
     BCrypt::Password.create(password)
   end
    
