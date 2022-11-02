@@ -9,22 +9,22 @@
 module Crud
   require 'bcrypt'
   puts "Module CRUD activated"
-  def Crud.create_hash_digest(password) #class reference infront of all method names
+  def self.create_hash_digest(password) #class method that doesn't require an instance 
     BCrypt::Password.create(password)
   end
    
-  def Crud.verify_hash_digest(password)
+  def self.verify_hash_digest(password)
     BCrypt::Password.new(password)
   end
    
-  def Crud.create_secure_users(list_of_users)
+  def self.create_secure_users(list_of_users)
     list_of_users.each do |user_record|
       user_record[:password] = create_hash_digest(user_record[:password])
       puts "The encrypted password for user #{user_record[:username]} is #{user_record[:password]}"
     end
   end
 
-  def Crud.authenticate_user(username, password, list_of_users)
+  def self.authenticate_user(username, password, list_of_users)
     list_of_users.each do |user_record|
       if user_record[:username] == username && verify_hash_digest(user_record[:password]) == password
         return "Authentication passed #{user_record}"
