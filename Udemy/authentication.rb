@@ -1,4 +1,5 @@
 # users array where username and password are stored
+
 users = [
           { username: "mashrur", password: "password1" },
           { username: "jack", password: "password2" },

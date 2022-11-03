@@ -1,4 +1,6 @@
- users = [
+# bcrypt gem uses MD5 algorithm and adds a salt, salt allows the result to be different anytime it is run
+
+users = [
           { username: "mashrur", password: "password1" },
           { username: "jack", password: "password2" },
           { username: "arya", password: "password3" },
